@@ -29,17 +29,11 @@
 
 <h:body bgcolor="white">
   <f:view>
-    <c:if test="#{param.test}" >
-        <div>show if test parameter = true</div>
+
+    <c:if test="#{param.test} &amp;&amp; #{header['User-Agent'].contains('Firefox')}" >
+        <div>show if test parameter = true and it's firefox</div>
     </c:if>
-    <c:choose>
-        <c:when test="#{header['User-Agent'].contains('Firefox')}">
-            This is firefox.
-        </c:when>
-        <c:when test="#{header['User-Agent'].contains('Edg')}">
-            This is Edge.
-        </c:when>
-    </c:choose>
+
     <h:form>
       <h:panelGrid columns="2">
         <h:outputText value='Enter first number'/>
