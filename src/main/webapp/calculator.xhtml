@@ -30,8 +30,11 @@
 <h:body bgcolor="white">
   <f:view>
 
-    <c:if test="#{param.test} &amp;&amp; #{header['User-Agent'].contains('Firefox')}" >
-        <div>show if test parameter = true and it's firefox</div>
+    <c:if test="#{param.test}" >
+        <div>show if test parameter = true it's firefox</div>
+    </c:if>
+    <c:if test="#{header['User-Agent'].contains('Firefox')}">
+      <div>it's firefox</div>
     </c:if>
 
     <h:form>
